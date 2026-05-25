@@ -194,6 +194,8 @@
             border: none; 
             cursor: pointer; 
         }
+
+        strong { color: var(--mimetico-marrone); }
     </style>
 </head>
 <body>
@@ -206,6 +208,10 @@
             <h1>Global Rations Archive</h1>
             <p>Science & Logistics of Military Nutrition</p>
         </header>
+
+        <div class="info-panel">
+            <p>Explore the technical standards and nutritional analysis of military rations used by world powers.</p>
+        </div>
 
         <div class="dashboard">
             <div class="card" onclick="showPage('regulations')">
@@ -225,6 +231,11 @@
                 <span>RUSSIA</span>
             </div>
         </div>
+
+        <div class="info-panel">
+            <h3>Summary Overview</h3>
+            <p>Military logistics require food that is durable, high-calorie, and easy to prepare in hostile environments.</p>
+        </div>
     </div>
 </div>
 
@@ -232,10 +243,14 @@
     <div class="container">
         <div class="content-box">
             <h2>📋 AGREEMENTS & REGULATIONS</h2>
+            <h3>Strict Suitability Standards</h3>
+            <p>Every military food item is strictly regulated. The Ministry of Defense ensures that each ration is perfectly suitable for combat needs, providing specific nutrition while remaining safe for long-term storage.</p>
             <div class="list-box">
+                <strong>General Technical Resilience:</strong>
                 <ul>
                     <li><strong>Durability:</strong> Rations must last at least 2 years in standard conditions.</li>
-                    <li><strong>Climate Adaptation:</strong> In extreme climates, shelf life is reduced to 9 months.</li>
+                    <li><strong>Climate Adaptation:</strong> In extremely hot or cold climates, shelf life is often reduced (e.g., to 9 months).</li>
+                    <li><strong>Packaging:</strong> Must resist UV rays, water, and impact.</li>
                 </ul>
             </div>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
@@ -247,13 +262,22 @@
     <div class="container">
         <div class="content-box">
             <h2>🇮🇹 ITALIAN MILITARY RATIONS</h2>
-            <p>The Italian rations are divided into 7 modules (A to G).</p>
+            <h3>The 7 Modules (A to G)</h3>
+            <p>The Italian rations are divided into 7 specific modules, classified from A to G. Each module is identified by a different color and contains different foods to avoid food monotony.</p>
             <div class="list-box">
+                <strong>Daily Nutritional Structure:</strong>
                 <ul>
-                    <li><strong>Breakfast:</strong> Biscuits, milk, and coffee.</li>
-                    <li><strong>Lunch & Dinner:</strong> Pasta, meat, and fruit.</li>
+                    <li><strong>Breakfast:</strong> Sweet foods like biscuits or jelly, milk, and freeze-dried coffee.</li>
+                    <li><strong>Lunch & Dinner:</strong> Ready-made meals (pasta, minestrone) and proteins (turkey, meat in jelly).</li>
+                    <li><strong>Additional items:</strong> Fruit and coffee.</li>
                 </ul>
             </div>
+            <h3>Equipment</h3>
+            <ul>
+                <li>A small cooking stove.</li>
+                <li>Personal cutlery.</li>
+                <li>A water disinfection kit.</li>
+            </ul>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
@@ -263,26 +287,33 @@
     <div class="container">
         <div class="content-box">
             <h2>🇺🇸 US MEAL READY-TO-EAT (MRE)</h2>
+            <p>The US military ration is called the <strong>MRE (Meal Ready to Eat)</strong>.</p>
             
             <div class="list-box">
-                <p><strong>There are 24 variations and they provide a caloric intake of 1300k. They can be stored for 2 years or 9 months if used in extremely hot or extremely cold climates. MRE 23 provides approximately 1400 calories, unlike others military rations, it is a single meal.</strong></p>
+                <p>There are 24 variations and they provide a caloric intake of 1300k. They can be stored for 2 years or 9 months if used in extremely hot or extremely cold climates. MRE 23 provides approximately 1400 calories, unlike others military rations, it is a single meal.</p>
             </div>
 
-            <h3>Technical Specifications</h3>
-            <p>The MRE can be consumed without fire using the FRH system (magnesium, iron, and salt reaction). This avoids revealing the soldiers' position.</p>
-
-            <h3>MRE Sample Menu</h3>
+            <h3>The FRH System</h3>
+            <p>MREs use a chemical compound called FRH (Flameless Ration Heater). This works through a reaction between magnesium, iron, and salt, which is very useful because it <strong>does not reveal the position of the soldiers</strong>.</p>
+            
+            <h3>MRE Sample Menu Table</h3>
             <table>
                 <thead>
-                    <tr><th>ITEM</th><th>WEIGHT</th><th>CALORIES</th></tr>
+                    <tr>
+                        <th>ITEM</th>
+                        <th>WEIGHT</th>
+                        <th>CALORIES</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
                     <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
+                    <tr><td>Chocolate Protein Drink</td><td>42g</td><td>180 kcal</td></tr>
                     <tr><td>Oatmeal Cookie</td><td>57g</td><td>250 kcal</td></tr>
+                    <tr><td>Pepperoni Pizza (Main)</td><td>88g</td><td>280 kcal</td></tr>
+                    <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
+                    <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
                 </tbody>
             </table>
-            
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
@@ -293,12 +324,14 @@
         <div class="content-box">
             <h2>🇷🇺 RUSSIAN MILITARY RATIONS</h2>
             <div class="list-box">
+                <strong>The 3 Types:</strong>
                 <ul>
-                    <li><strong>IRP:</strong> Daily Ration.</li>
-                    <li><strong>MRGP:</strong> Mountain/Winter Ration.</li>
-                    <li><strong>SHTURM:</strong> Assault Ration.</li>
+                    <li><strong>IRP (Daily Ration):</strong> Used every day by normal soldiers.</li>
+                    <li><strong>MRGP:</strong> Made for the hard climate of Russia’s winter and mountains.</li>
+                    <li><strong>SHTURM:</strong> Made for quick missions or emergency situations.</li>
                 </ul>
             </div>
+            <p>It provides approximately 3,000 kcal divided between breakfast, lunch, and dinner.</p>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
@@ -308,7 +341,8 @@
     function showPage(pageId) {
         const pages = document.querySelectorAll('.page');
         pages.forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
+        const target = document.getElementById(pageId);
+        target.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
