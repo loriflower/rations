@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivio Razioni Militari</title>
+    <style>
+        :root {
+            --militare: #4b5320; /* Verde oliva */
+            --sabbia: #c2b280;
+            --scuro: #1b1e0f;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: #f0f0e8; color: #333; }
+        header { background: var(--militare); color: white; padding: 2rem; text-align: center; border-bottom: 5px solid var(--scuro); }
+        nav { background: var(--scuro); padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: var(--sabbia); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border: 1px solid #ccc; box-shadow: 5px 5px 0px #aaa; }
+        h2 { color: var(--militare); border-left: 10px solid var(--militare); padding-left: 15px; text-transform: uppercase; }
+        section { margin-bottom: 40px; padding: 10px; }
+        .regolamenti { background: #e2e2d5; border: 2px dashed var(--militare); padding: 20px; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DATABASE RAZIONI MILITARI</h1>
+    <p>Documentazione tecnica e contenuti delle razioni K e MRE</p>
+</header>
+
+<nav>
+    <a href="#italia">ITALIA</a>
+    <a href="#usa">USA</a>
+    <a href="#francia">FRANCIA</a>
+    <a href="#regole">REGOLAMENTI</a>
+</nav>
+
+<div class="container">
+    <section id="italia">
+        <h2>Italia - Razione Viveri Speciale da Combattimento</h2>
+        <p>La razione italiana è famosa per includere un piccolo contenitore di cordiale e un fornello a combustibile solido.</p>
+        <ul>
+            <li><strong>Colazione:</strong> Biscotti dolci, latte condensato, cioccolato.</li>
+            <li><strong>Pranzo:</strong> Tortellini al ragù, manzo in gelatina, frutta sciroppata.</li>
+            <li><strong>Cena:</strong> Minestrone di verdure, tonno e fagioli, gallette.</li>
+        </ul>
+    </section>
+
+    <section id="usa">
+        <h2>USA - MRE (Meal, Ready-to-Eat)</h2>
+        <p>Il sistema MRE è lo standard delle forze armate americane dal 1981.</p>
+        <ul>
+            <li><strong>Innovazione:</strong> Include il Flameless Ration Heater (FRH) per scaldare il cibo senz'acqua.</li>
+            <li><strong>Varietà:</strong> 24 menu diversi disponibili ogni anno.</li>
+        </ul>
+    </section>
+
+    <section id="francia">
+        <h2>Francia - RCIR (Ration de Combat Individuelle Rechauffable)</h2>
+        <p>Spesso considerata la migliore al mondo per qualità organolettica.</p>
+        <ul>
+            <li><strong>Contenuto:</strong> Spesso include piatti come Anatra all'arancia o Cervo.</li>
+            <li><strong>Extra:</strong> Include un kit di riscaldamento con compresse di combustibile.</li>
+        </ul>
+    </section>
+
+    <section id="regole" class="regolamenti">
+        <h2>📋 Regolamentazioni e Dati Tecnici</h2>
+        <p>Qui puoi inserire le tue note specifiche. Ad esempio:</p>
+        <blockquote>
+            "Le razioni devono garantire un apporto calorico medio di 3.600 kcal al giorno per un soldato in attività operativa intensa."
+        </blockquote>
+    </section>
+</div>
+
+<footer>
+    Progetto Razioni Militari - Accesso Autorizzato
+</footer>
+
+</body>
+</html>
