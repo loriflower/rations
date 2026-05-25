@@ -98,4 +98,134 @@
         .card i { font-size: 3rem; margin-bottom: 15px; }
         .card span { font-family: 'Black Ops One', cursive; font-size: 1.4rem; display: block; }
 
-        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10
+        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        table th { background: var(--verde-mimetico); color: white; padding: 12px; text-align: left; }
+        table td { border: 1px solid #ddd; padding: 10px; color: #333; }
+        
+        .highlight-box { background: #e9ecef; border-left: 5px solid var(--terra); padding: 15px; margin: 20px 0; color: #333; }
+
+        .back-btn {
+            background: var(--scuro);
+            color: var(--sabbia);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: 'Black Ops One', cursive;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-camouflage"></div>
+
+<div id="home" class="page active">
+    <div class="container">
+        <header>
+            <h1>Military Rations in the World</h1>
+            <p>A comprehensive look into military rations in the world</p>
+        </header>
+
+        <div class="content-box" style="background: rgba(0,0,0,0.6); color: white; text-align: center; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1);">
+            <p>Seleziona un'unità operativa per visualizzare le specifiche tecniche, i contenuti e i valori nutrizionali delle razioni da combattimento internazionali.</p>
+        </div>
+
+        <div class="dashboard">
+            <div class="card" onclick="showPage('italia')">
+                <i class="fas fa-flag"></i>
+                <span>ITALIA</span>
+            </div>
+            <div class="card" onclick="showPage('usa')">
+                <i class="fas fa-star"></i>
+                <span>U.S.A.</span>
+            </div>
+            <div class="card" onclick="showPage('russia')">
+                <i class="fas fa-certificate"></i>
+                <span>RUSSIA</span>
+            </div>
+            <div class="card" onclick="showPage('normative')">
+                <i class="fas fa-file-shield"></i>
+                <span>NORMATIVE</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="italia" class="page">
+    <div class="container">
+        <div class="content-box">
+            <h2>🇮🇹 RAZIONE MILITARE ITALIANA</h2>
+            <p>Le razioni italiane sono suddivise in moduli classificati da <strong>A a G</strong>, identificati da colori diversi per evitare la monotonia alimentare.</p>
+            <div class="highlight-box">
+                <strong>Specifiche:</strong> ~3000 kcal | 3 Pasti completi | Include kit di riscaldamento e disinfezione acqua.
+            </div>
+            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+        </div>
+    </div>
+</div>
+
+<div id="usa" class="page">
+    <div class="container">
+        <div class="content-box">
+            <h2>🇺🇸 U.S. MILITARY RATION (MRE)</h2>
+            <table>
+                <thead>
+                    <tr><th>Cibo</th><th>Quantità</th><th>Calorie</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
+                    <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
+                    <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Pro:</strong> Non necessita di fuoco (FRH). <strong>Contro:</strong> Elevato sodio.</p>
+            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+        </div>
+    </div>
+</div>
+
+<div id="russia" class="page">
+    <div class="container">
+        <div class="content-box">
+            <h2>🇷🇺 RUSSIA'S MILITARY RATIONS</h2>
+            <p>Tipologie: <strong>IRP</strong> (Standard), <strong>MRGP</strong> (Montagna), <strong>SHTURM</strong> (Emergenza).</p>
+            <table>
+                <thead>
+                    <tr><th>Cibo</th><th>Quantità</th><th>Calorie</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Beef Stew</td><td>250g</td><td>550 kcal</td></tr>
+                    <tr><td>Wheat Crackers</td><td>200g</td><td>720 kcal</td></tr>
+                    <tr style="font-weight:bold;"><td>TOTAL</td><td>700g</td><td>2100 kcal</td></tr>
+                </tbody>
+            </table>
+            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+        </div>
+    </div>
+</div>
+
+<div id="normative" class="page">
+    <div class="container">
+        <div class="content-box">
+            <h2>📋 ACCORDI E NORMATIVE</h2>
+            <p><strong>STANAG (NATO):</strong> Requisiti nutrizionali tra 3600 e 4900 calorie.</p>
+            <p><strong>HACCP:</strong> Resistenza garantita tra -30°C e +60°C.</p>
+            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
