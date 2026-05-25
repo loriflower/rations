@@ -26,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* BACKGROUND CAMOUFLAGE REALISTICO */
         .bg-camouflage {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -79,10 +78,9 @@
             line-height: 1.6;
         }
 
-        /* DASHBOARD GRID */
         .dashboard {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin: 30px 0;
         }
@@ -101,7 +99,6 @@
         .card .flag { font-size: 3.5rem; margin-bottom: 10px; display: block; }
         .card span { font-family: 'Black Ops One', cursive; font-size: 1.2rem; display: block; }
 
-        /* INTRO & COMPARISON BOXES */
         .info-panel {
             background: rgba(0,0,0,0.75);
             color: white;
@@ -113,7 +110,7 @@
         }
 
         h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10px; margin-top: 0; }
-        h3 { color: var(--verde-mimetico); border-left: 5px solid var(--terra); padding-left: 10px; }
+        h3 { color: var(--verde-mimetico); border-left: 5px solid var(--terra); padding-left: 10px; margin-top: 25px; }
         
         table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
         table th { background: #3b441b; color: white; padding: 12px; text-align: left; }
@@ -179,19 +176,24 @@
     <div class="container">
         <div class="content-box">
             <h2>📋 AGREEMENTS & REGULATIONS</h2>
+            
             <h3>STANAG 2937 (NATO)</h3>
-            <p>Adopted in 2001, the <strong>Standardization Agreement</strong> ensures NATO soldiers receive safe and adequate nutrition during joint missions.</p>
+            <p>Adopted in 2001, the <strong>Standardization Agreement</strong> ensures that soldiers from different NATO countries receive adequate and safe nutrition during joint operations.</p>
             <ul>
-                <li><strong>Energy Requirements:</strong> Rations must provide between 3,600 and 4,900 kcal per day.</li>
-                <li><strong>Nutritional Balance:</strong> Fats must not exceed 30% of total energy.</li>
+                <li><strong>Energy Intake:</strong> Rations must provide between 3,600 and 4,900 kcal per day (depending on activity).</li>
+                <li><strong>Fat Content:</strong> Fats must not exceed 30% of the total energy intake.</li>
+                <li><strong>Nutritional Balance:</strong> Menus must be varied to maintain physical and mental performance.</li>
             </ul>
-            <h3>HACCP & Technical Durability</h3>
+
+            <h3>HACCP & Technical Safety</h3>
+            <p>All military food must strictly follow the <strong>HACCP</strong> (Hazard Analysis and Critical Control Points) system to eliminate biological, chemical, or physical risks.</p>
+            
             <div class="list-box">
-                <strong>Field Resistance:</strong>
+                <strong>Technical Durability Requirements:</strong>
                 <ul>
-                    <li><strong>Stability:</strong> Guaranteed safe from -30°C to +60°C.</li>
-                    <li><strong>Shelf Life:</strong> Edible for 2-3 years in any weather condition.</li>
-                    <li><strong>Safety:</strong> Sterilized to ensure risks are eliminated without refrigeration.</li>
+                    <li><strong>Temperature Resistance:</strong> Must remain stable and safe from -30°C to +60°C.</li>
+                    <li><strong>Shelf Life:</strong> Guaranteed for at least 2 to 3 years in any weather condition.</li>
+                    <li><strong>Sterilization:</strong> Advanced heat or pressure treatments ensure safety without refrigeration.</li>
                 </ul>
             </div>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
@@ -203,17 +205,22 @@
     <div class="container">
         <div class="content-box">
             <h2>🇮🇹 RAZIONE VIVERI SPECIALE DA COMBATTIMENTO</h2>
-            <p>A complete 24-hour ration designed for Italian personnel in operational environments.</p>
-            <h3>Modules A - G</h3>
-            <p>The Italian system uses 7 different color-coded modules to prevent dietary monotony during long deployments.</p>
+            <p>The Italian ration is a complete 24-hour food supply designed for soldiers in operational environments.</p>
+            
+            <h3>Modular Structure</h3>
+            <p>It is divided into <strong>7 different modules</strong>, identified by specific colors (Module A to Module G). This variety is essential to prevent "dietary boredom" (monotonia alimentare) and ensure balanced nutrition over long periods.</p>
+            
+            <h3>Equipment and Hygiene</h3>
+            <p>Inside each package, the soldier finds survival and hygiene tools:</p>
+            <ul>
+                <li>Disposable folding stove and fuel tablets.</li>
+                <li>Water purification tablets to make water safe.</li>
+                <li>Hygiene kit: tissues, toothbrushes, and more.</li>
+                <li>A small dose of alcohol ("Cordiale").</li>
+            </ul>
+
             <div class="list-box">
-                <strong>Equipment Included:</strong>
-                <ul>
-                    <li>Disposable folding stove and fuel.</li>
-                    <li>Water purification tablets.</li>
-                    <li>Full hygiene kit (toothbrush, tissues, etc.).</li>
-                    <li>A small dose of "Cordiale" (alcoholic drink).</li>
-                </ul>
+                <strong>Average Energy Intake:</strong> Approximately 3,000 kcal per day, optimized for high physical exertion.
             </div>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
@@ -224,6 +231,9 @@
     <div class="container">
         <div class="content-box">
             <h2>🇺🇸 MEAL, READY-TO-EAT (MRE)</h2>
+            <p>The MRE is the primary individual combat ration of the U.S. Armed Forces, designed for consumption in the field.</p>
+            
+            <h3>Nutritional Facts (Example Menu)</h3>
             <table>
                 <thead>
                     <tr><th>Component</th><th>Weight</th><th>Calories</th></tr>
@@ -231,13 +241,27 @@
                 <tbody>
                     <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
                     <tr><td>Chocolate Energy Drink</td><td>42g</td><td>180 kcal</td></tr>
+                    <tr><td>Oat Cookie</td><td>57g</td><td>250 kcal</td></tr>
                     <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
                     <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
+                    <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
                 </tbody>
             </table>
+
+            <h3>Operational Analysis</h3>
             <div class="list-box">
-                <strong>Analysis:</strong>
-                <p>Pros: High variety (24 menus) and Flameless Ration Heaters (FRH).<br>Cons: High levels of sodium and saturated fats.</p>
+                <strong>Pros:</strong>
+                <ul>
+                    <li>Highly portable and durable.</li>
+                    <li>Great variety (24 different menus).</li>
+                    <li>Includes the "Flameless Ration Heater" (FRH) for hot meals without fire.</li>
+                    <li>Provides a psychological boost through familiar snacks.</li>
+                </ul>
+                <strong>Cons:</strong>
+                <ul>
+                    <li>Very high sodium (salt) levels.</li>
+                    <li>High levels of saturated fats and preservatives.</li>
+                </ul>
             </div>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
@@ -248,18 +272,33 @@
     <div class="container">
         <div class="content-box">
             <h2>🇷🇺 RUSSIAN MILITARY RATIONS</h2>
-            <p>Classification: <strong>IRP</strong> (Daily), <strong>MRGP</strong> (Mountain), <strong>SHTURM</strong> (Emergency).</p>
+            <p>Rations tailored to specific mission profiles and harsh environments.</p>
+            
+            <h3>Main Classifications</h3>
+            <ul>
+                <li><strong>IRP:</strong> The standard daily ration for personnel.</li>
+                <li><strong>MRGP:</strong> Specialized for mountain combat and cold climates.</li>
+                <li><strong>SHTURM:</strong> Compact and light for assault or emergency operations.</li>
+            </ul>
+
+            <h3>Contents and Caloric Table</h3>
             <table>
                 <thead>
                     <tr><th>Component</th><th>Quantity</th><th>Calories</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>Beef Stew</td><td>250g</td><td>550 kcal</td></tr>
-                    <tr><td>Wheat Crackers</td><td>200g</td><td>720 kcal</td></tr>
+                    <tr><td>Meat Goulash with Veggies</td><td>100g</td><td>180 kcal</td></tr>
+                    <tr><td>Wheat Crackers</td><td>200g (4 packs)</td><td>720 kcal</td></tr>
                     <tr><td>Spreading Cheese</td><td>80g</td><td>240 kcal</td></tr>
-                    <tr style="font-weight:bold;"><td>TOTAL (Main Items)</td><td>700g</td><td>~2,100 kcal</td></tr>
+                    <tr><td>Chocolate / Energy Bar</td><td>50g</td><td>250 kcal</td></tr>
+                    <tr><td>Drink Concentrate</td><td>2 bags</td><td>160 kcal</td></tr>
+                    <tr style="font-weight:bold; background:#ddd;">
+                        <td>TOTAL (Main Items)</td><td>700g</td><td>~2,100 kcal</td>
+                    </tr>
                 </tbody>
             </table>
+            <p><em>Note: A complete IRP package typically provides a total daily intake between 3,500 and 4,000 kcal.</em></p>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
     </div>
