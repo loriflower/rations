@@ -181,6 +181,17 @@
             color: #333; 
         }
 
+        .slide-img { 
+            width: 100%; 
+            max-width: 600px; 
+            height: auto; 
+            border-radius: 10px; 
+            margin: 20px auto; 
+            display: block; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 3px solid var(--terra);
+        }
+
         .back-btn { 
             background: var(--scuro); 
             color: var(--sabbia); 
@@ -210,7 +221,7 @@
         </header>
 
         <div class="info-panel">
-            <p>Explore the technical standards and nutritional analysis of military rations used by world powers.</p>
+            <p>Explore the technical standards and nutritional analysis of military rations (MRE) used by world powers.</p>
         </div>
 
         <div class="dashboard">
@@ -233,8 +244,38 @@
         </div>
 
         <div class="info-panel">
-            <h3>Summary Overview</h3>
-            <p>Military logistics require food that is durable, high-calorie, and easy to prepare in hostile environments.</p>
+            <h3>Comparison & Conclusions</h3>
+            <p>Military rations prioritize durability and calories over taste. Below is the final scientific comparison:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NATION</th>
+                        <th>CALORIES</th>
+                        <th>STRENGTHS</th>
+                        <th>WEAKNESSES</th>
+                    </tr>
+                </thead>
+                <tbody style="background: white; color: black;">
+                    <tr>
+                        <td><strong>Italy</strong></td>
+                        <td>~3,000 kcal</td>
+                        <td>Modular variety, Hygiene kit</td>
+                        <td>Heavy canned food</td>
+                    </tr>
+                    <tr>
+                        <td><strong>USA</strong></td>
+                        <td>~1,300 kcal/meal</td>
+                        <td>FRH chemical heating</td>
+                        <td>High Sodium content</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Russia</strong></td>
+                        <td>~3,500+ kcal</td>
+                        <td>Cold resistance, Fat density</td>
+                        <td>Weight (up to 2kg)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -243,14 +284,24 @@
     <div class="container">
         <div class="content-box">
             <h2>📋 AGREEMENTS & REGULATIONS</h2>
-            <h3>Strict Suitability Standards</h3>
-            <p>Every military food item is strictly regulated. The Ministry of Defense ensures that each ration is perfectly suitable for combat needs, providing specific nutrition while remaining safe for long-term storage.</p>
+            <img src="razione_regolamenti.jpg" class="slide-img" alt="Regulations">
+            
+            <h3>NATO STANAG 2937</h3>
+            <p>Adopted to standardize nutritional requirements across member nations. It ensures every soldier receives adequate energy in the field.</p>
+            <ul>
+                <li><strong>Calories:</strong> 3,600 to 4,900 kcal per day.</li>
+                <li><strong>Proteins:</strong> 10% to 12% of total energy.</li>
+                <li><strong>Fats:</strong> Maximum 30% of energy.</li>
+            </ul>
+
+            <h3>HACCP STANDARDS</h3>
+            <p>The <strong>Hazard Analysis and Critical Control Points</strong> system ensures that rations are sterile and chemically safe.</p>
             <div class="list-box">
-                <strong>General Technical Resilience:</strong>
+                <strong>Technical Resilience:</strong>
                 <ul>
-                    <li><strong>Durability:</strong> Rations must last at least 2 years in standard conditions.</li>
-                    <li><strong>Climate Adaptation:</strong> In extremely hot or cold climates, shelf life is often reduced (e.g., to 9 months).</li>
-                    <li><strong>Packaging:</strong> Must resist UV rays, water, and impact.</li>
+                    <li><strong>Thermal Range:</strong> Stable from -30°C to +60°C.</li>
+                    <li><strong>Storage:</strong> Minimum 24-36 months without refrigeration.</li>
+                    <li><strong>Packaging:</strong> Water-resistant and impact-resistant.</li>
                 </ul>
             </div>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
@@ -261,23 +312,25 @@
 <div id="italia" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇮🇹 ITALIAN MILITARY RATIONS</h2>
-            <h3>The 7 Modules (A to G)</h3>
-            <p>The Italian rations are divided into 7 specific modules, classified from A to G. Each module is identified by a different color and contains different foods to avoid food monotony.</p>
+            <h2>🇮🇹 ITALIAN "RAZIONE SPECIALE"</h2>
+            <img src="razione_italiane.jpg" class="slide-img" alt="Italian Ration 1">
+            <img src="razione_italiane_2.jpg" class="slide-img" alt="Italian Ration 2">
+            
+            <h3>Modules A to G</h3>
+            <p>The Italian army uses <strong>7 different modules</strong>, each identified by a color. This variety prevents "dietary fatigue" and ensures balanced nutrition over a week.</p>
+            
             <div class="list-box">
-                <strong>Daily Nutritional Structure:</strong>
+                <strong>Inside the Kit:</strong>
                 <ul>
-                    <li><strong>Breakfast:</strong> Sweet foods like biscuits or jelly, milk, and freeze-dried coffee.</li>
-                    <li><strong>Lunch & Dinner:</strong> Ready-made meals (pasta, minestrone) and proteins (turkey, meat in jelly).</li>
-                    <li><strong>Additional items:</strong> Fruit and coffee.</li>
+                    <li>A folding metal stove with fuel tablets.</li>
+                    <li>Water purification tablets (Chlorine based).</li>
+                    <li>Complete hygiene kit: 3 toothbrushes + paste.</li>
+                    <li><strong>The "Cordiale":</strong> A 3cl dose of alcohol for morale and warmth.</li>
                 </ul>
             </div>
-            <h3>Equipment</h3>
-            <ul>
-                <li>A small cooking stove.</li>
-                <li>Personal cutlery.</li>
-                <li>A water disinfection kit.</li>
-            </ul>
+            
+            <h3>Nutritional Focus</h3>
+            <p>The Italian ration is famous for its quality, including pasta and meat courses that follow strict Mediterranean ratios of macronutrients.</p>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
@@ -287,16 +340,15 @@
     <div class="container">
         <div class="content-box">
             <h2>🇺🇸 US MEAL READY-TO-EAT (MRE)</h2>
-            <p>The US military ration is called the <strong>MRE (Meal Ready to Eat)</strong>.</p>
+            <img src="razione_americana.jpg" class="slide-img" alt="US MRE 1">
+            <img src="razione_americana_2.jpg" class="slide-img" alt="US MRE 2">
             
-            <div class="list-box">
-                <p>There are 24 variations and they provide a caloric intake of 1300k. They can be stored for 2 years or 9 months if used in extremely hot or extremely cold climates. MRE 23 provides approximately 1400 calories, unlike others military rations, it is a single meal.</p>
-            </div>
+            <h3>The Science of FRH</h3>
+            <p>The <strong>Flameless Ration Heater</strong> uses a chemical reaction: 
+            $$Mg + 2H_2O \rightarrow Mg(OH)_2 + H_2 + \text{heat}$$
+            By adding a small amount of water to the magnesium/iron pad, it reaches boiling temperatures in seconds without smoke.</p>
 
-            <h3>The FRH System</h3>
-            <p>MREs use a chemical compound called FRH (Flameless Ration Heater). This works through a reaction between magnesium, iron, and salt, which is very useful because it <strong>does not reveal the position of the soldiers</strong>.</p>
-            
-            <h3>MRE Sample Menu Table</h3>
+            <h3>MRE 23 Nutritional Table</h3>
             <table>
                 <thead>
                     <tr>
@@ -307,9 +359,9 @@
                 </thead>
                 <tbody>
                     <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
-                    <tr><td>Chocolate Protein Drink</td><td>42g</td><td>180 kcal</td></tr>
-                    <tr><td>Oatmeal Cookie</td><td>57g</td><td>250 kcal</td></tr>
-                    <tr><td>Pepperoni Pizza (Main)</td><td>88g</td><td>280 kcal</td></tr>
+                    <tr><td>Chocolate Drink</td><td>42g</td><td>180 kcal</td></tr>
+                    <tr><td>Oat Cookie</td><td>57g</td><td>250 kcal</td></tr>
+                    <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
                     <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
                     <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
                 </tbody>
@@ -322,16 +374,26 @@
 <div id="russia" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇷🇺 RUSSIAN MILITARY RATIONS</h2>
+            <h2>🇷🇺 RUSSIAN INDIVIDUAL RATIONS</h2>
+            <img src="razioni_russe.jpg" class="slide-img" alt="Russian IRP 1">
+            <img src="razioni_russe_2.jpg" class="slide-img" alt="Russian IRP 2">
+            
+            <h3>Specific Classifications</h3>
+            <ul>
+                <li><strong>IRP (Individualniy Ratsion Pitaniya):</strong> The standard daily pack.</li>
+                <li><strong>MRGP:</strong> Mountain/Winter specialized ration with extra fat.</li>
+                <li><strong>SHTURM:</strong> Assault ration, smaller and lighter for 1 meal.</li>
+            </ul>
+
+            <h3>IRP Composition</h3>
             <div class="list-box">
-                <strong>The 3 Types:</strong>
+                <p>Designed for the harsh Russian winter, these rations are incredibly high in calories to prevent hypothermia.</p>
                 <ul>
-                    <li><strong>IRP (Daily Ration):</strong> Used every day by normal soldiers.</li>
-                    <li><strong>MRGP:</strong> Made for the hard climate of Russia’s winter and mountains.</li>
-                    <li><strong>SHTURM:</strong> Made for quick missions or emergency situations.</li>
+                    <li>Beef Stew (High fat content)</li>
+                    <li>Lard / Pork fat spread</li>
+                    <li>Hard wheat crackers (very high carb density)</li>
                 </ul>
             </div>
-            <p>It provides approximately 3,000 kcal divided between breakfast, lunch, and dinner.</p>
             <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
@@ -339,10 +401,15 @@
 
 <script>
     function showPage(pageId) {
+        // Hide all pages
         const pages = document.querySelectorAll('.page');
         pages.forEach(p => p.classList.remove('active'));
+        
+        // Show target page
         const target = document.getElementById(pageId);
         target.classList.add('active');
+        
+        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
