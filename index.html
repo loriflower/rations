@@ -50,22 +50,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .container { max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
 
         header { text-align: center; margin-bottom: 50px; }
-        header h1 { 
-            font-family: 'Black Ops One', cursive; 
-            font-size: 3.5rem; 
-            color: var(--sabbia); 
-            margin: 0; 
-            text-transform: uppercase;
-        }
-        header p { 
-            color: var(--terra); 
-            font-weight: bold; 
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
+        header h1 { font-family: 'Black Ops One', cursive; font-size: 3.2rem; color: var(--sabbia); margin: 0; text-transform: uppercase; line-height: 1.1; }
+        header p { color: var(--terra); font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
 
         .content-box {
             background: rgba(255,255,255,0.95);
@@ -73,11 +62,12 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            line-height: 1.6;
         }
 
         .dashboard {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
@@ -94,16 +84,18 @@
 
         .card:hover { background: var(--terra); color: var(--scuro); transform: scale(1.03); }
         .card i { font-size: 3rem; margin-bottom: 15px; }
-        .card span { font-family: 'Black Ops One', cursive; font-size: 1.4rem; display: block; }
+        .card span { font-family: 'Black Ops One', cursive; font-size: 1.3rem; display: block; }
 
-        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10px; }
-        h3 { color: var(--verde-mimetico); margin-top: 25px; }
+        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10px; margin-top: 0; }
+        h3 { color: var(--verde-mimetico); border-left: 5px solid var(--terra); padding-left: 10px; margin-top: 30px; }
         
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; font-size: 0.95rem; }
         table th { background: var(--verde-mimetico); color: white; padding: 12px; text-align: left; }
         table td { border: 1px solid #ddd; padding: 10px; color: #333; }
+        table tr:nth-child(even) { background: #f2f2f2; }
         
-        .highlight-box { background: #e9ecef; border-left: 5px solid var(--terra); padding: 15px; margin: 20px 0; color: #333; }
+        .list-box { background: #e9ecef; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .list-box ul { margin: 0; padding-left: 20px; }
 
         .back-btn {
             background: var(--scuro);
@@ -112,7 +104,7 @@
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
             font-weight: bold;
             font-family: 'Black Ops One', cursive;
         }
@@ -130,7 +122,7 @@
         </header>
 
         <div class="content-box" style="background: rgba(0,0,0,0.6); color: white; text-align: center; margin-bottom: 30px;">
-            <p>Select an operational unit to view technical specifications, nutritional values, and international regulations of combat rations.</p>
+            <p>Explore the technical specifications, nutritional components, and international standards of combat food supplies used by global armed forces.</p>
         </div>
 
         <div class="dashboard">
@@ -157,14 +149,23 @@
 <div id="italia" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇮🇹 ITALIAN COMBAT RATION</h2>
-            <p>The Italian ration, known as "Razione Viveri Speciale da Combattimento", is organized into <strong>7 different modules (A to G)</strong>, identified by colors to prevent dietary boredom during long missions.</p>
+            <h2>🇮🇹 RAZIONE VIVERI SPECIALE DA COMBATTIMENTO</h2>
+            <p>The Italian ration is a complete 24-hour food supply designed for soldiers in operational environments.</p>
             
-            <div class="highlight-box">
-                <strong>Key Features:</strong><br>
-                - Average energy intake: ~3,000 kcal<br>
-                - Components: 3 full meals (Breakfast, Lunch, Dinner)<br>
-                - Extras: Includes a small dose of "Cordiale" (alcohol) and a folding stove with fuel tablets.
+            <h3>Modular Structure</h3>
+            <p>It is divided into <strong>7 different modules</strong>, identified by specific colors (Module A to Module G). This variety is essential to prevent "dietary boredom" and ensure the soldier receives different nutrients and flavors over long periods.</p>
+            
+            <h3>Equipment and Hygiene</h3>
+            <p>Inside each package, the soldier finds not only food but also survival tools:</p>
+            <ul>
+                <li>Disposable folding stove and fuel tablets.</li>
+                <li>Water purification tablets (to make non-potable water safe).</li>
+                <li>Tissues, toothbrushes, and hygiene kits.</li>
+                <li>A small dose of alcohol (Cordiale).</li>
+            </ul>
+
+            <div class="list-box">
+                <strong>Average Energy Intake:</strong> Approximately 3,000 kcal per day, balanced for high physical activity.
             </div>
             
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
@@ -175,12 +176,13 @@
 <div id="usa" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇺🇸 U.S. MRE (MEAL, READY-TO-EAT)</h2>
-            <p>The MRE is the main operational food ration for the United States Armed Forces. Designed for maximum durability and variety.</p>
+            <h2>🇺🇸 MEAL, READY-TO-EAT (MRE)</h2>
+            <p>The MRE is the main individual combat ration of the U.S. Armed Forces, designed for consumption in the field when organized food service is not available.</p>
             
+            <h3>Nutritional Facts (Example Menu)</h3>
             <table>
                 <thead>
-                    <tr><th>Component</th><th>Weight</th><th>Calories</th></tr>
+                    <tr><th>Food Item</th><th>Weight</th><th>Calories</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
@@ -191,10 +193,22 @@
                     <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
                 </tbody>
             </table>
-            
-            <div class="highlight-box">
-                <strong>Pros:</strong> High variety (24 menus), Flameless Ration Heater (FRH) included.<br>
-                <strong>Cons:</strong> High sodium and saturated fats.
+
+            <h3>Analysis</h3>
+            <div class="list-box">
+                <strong>Pros:</strong>
+                <ul>
+                    <li>Extremely easy to transport and durable.</li>
+                    <li>Very high variety (24 different menus).</li>
+                    <li>Includes the "Flameless Ration Heater" (FRH) to heat food without a fire.</li>
+                    <li>High psychological boost due to familiar snacks.</li>
+                </ul>
+                <br>
+                <strong>Cons:</strong>
+                <ul>
+                    <li>Very high levels of sodium (salt).</li>
+                    <li>Contains many saturated fats and preservatives for long shelf life.</li>
+                </ul>
             </div>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
@@ -205,24 +219,34 @@
     <div class="container">
         <div class="content-box">
             <h2>🇷🇺 RUSSIAN MILITARY RATIONS</h2>
-            <p>Russia uses different types of rations depending on the mission profile: <strong>IRP</strong> (Daily), <strong>MRGP</strong> (Mountain/Winter), and <strong>SHTURM</strong> (Assault/Emergency).</p>
+            <p>The Russian Federation uses various rations tailored to specific combat conditions and environmental challenges.</p>
             
+            <h3>Main Types</h3>
+            <ul>
+                <li><strong>IRP:</strong> The standard daily ration for the average soldier.</li>
+                <li><strong>MRGP:</strong> Specialized for mountain warfare and extremely cold climates.</li>
+                <li><strong>SHTURM:</strong> Compact and light, used during assault or emergency maneuvers.</li>
+            </ul>
+
+            <h3>Contents and Caloric Table</h3>
             <table>
                 <thead>
-                    <tr><th>Food Item</th><th>Weight</th><th>Calories</th></tr>
+                    <tr><th>Component</th><th>Quantity</th><th>Calories</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>Beef Stew</td><td>250g</td><td>550 kcal</td></tr>
                     <tr><td>Meat Goulash with Veggies</td><td>100g</td><td>180 kcal</td></tr>
-                    <tr><td>Wheat Crackers</td><td>200g</td><td>720 kcal</td></tr>
+                    <tr><td>Wheat Crackers</td><td>200g (4 packs)</td><td>720 kcal</td></tr>
                     <tr><td>Spreading Cheese</td><td>80g</td><td>240 kcal</td></tr>
                     <tr><td>Chocolate / Energy Bar</td><td>50g</td><td>250 kcal</td></tr>
-                    <tr><td>Drink Concentrate</td><td>-</td><td>160 kcal</td></tr>
-                    <tr style="font-weight:bold; background:#eee;">
-                        <td>TOTAL</td><td>700g (Main)</td><td>~2,100 kcal</td>
+                    <tr><td>Concentrate Drink</td><td>2 bags</td><td>160 kcal</td></tr>
+                    <tr style="font-weight:bold; background:#ddd;">
+                        <td>TOTAL</td><td>700g (Main items)</td><td>~2,100 kcal</td>
                     </tr>
                 </tbody>
             </table>
+            
+            <p><em>Note: The total weight of a full IRP package is usually higher, providing a daily intake between 3,500 and 4,000 kcal.</em></p>
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
     </div>
@@ -233,32 +257,38 @@
         <div class="content-box">
             <h2>📋 AGREEMENTS & REGULATIONS</h2>
             
-            <h3>NATO STANAG 2937</h3>
-            <p>Adopted in 2001, this agreement defines the minimum nutritional requirements for NATO member countries' rations.</p>
+            <h3>STANAG 2937 (NATO)</h3>
+            <p>Adopted in 2001, the <strong>STANAG (Standardization Agreement)</strong> ensures that soldiers from different NATO countries receive adequate and safe nutrition during joint operations.</p>
             <ul>
-                <li><strong>Caloric Range:</strong> Between 3,600 and 4,900 kcal depending on activity level.</li>
-                <li><strong>Fat Content:</strong> Must not exceed 30% of the total energy.</li>
+                <li><strong>Energy:</strong> Rations must provide between 3,600 and 4,900 kcal per day.</li>
+                <li><strong>Fat:</strong> Fats should not exceed 30% of the total energy intake.</li>
+                <li><strong>Variety:</strong> Menus must be varied to maintain the physical and mental health of the personnel.</li>
             </ul>
 
-            <h3>HACCP & SAFETY</h3>
-            <p>Military rations must comply with HACCP standards to ensure food safety in extreme environments.</p>
-            <div class="highlight-box">
-                <strong>Durability:</strong> Must be edible for 2-3 years.<br>
-                <strong>Temperature Resistance:</strong> Guaranteed stability from -30°C to +60°C.
+            <h3>HACCP & Technical Durability</h3>
+            <p>All military food must strictly follow the <strong>HACCP</strong> (Hazard Analysis and Critical Control Points) system to eliminate biological, chemical, or physical risks.</p>
+            
+            <div class="list-box">
+                <strong>Technical Storage Requirements:</strong>
+                <ul>
+                    <li><strong>Temperature Resistance:</strong> Must remain stable and safe from -30°C to +60°C.</li>
+                    <li><strong>Shelf Life:</strong> Guaranteed for at least 2 to 3 years in any weather condition.</li>
+                    <li><strong>Sterilization:</strong> Food is often treated with high pressure or heat to ensure total safety without refrigeration.</li>
+                </ul>
             </div>
 
-            <h3>SUMMARY COMPARISON</h3>
+            <h3>Final Comparison Table</h3>
             <table>
                 <thead>
-                    <tr><th>Nation</th><th>Calories (Daily)</th><th>Main Characteristic</th></tr>
+                    <tr><th>Nation</th><th>Calories (approx)</th><th>Unique Fact</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Italy</td><td>~3,000 kcal</td><td>Menu Diversity (7 Modules)</td></tr>
-                    <tr><td>USA</td><td>~3,800 kcal</td><td>Flameless Heating Tech</td></tr>
-                    <tr><td>Russia</td><td>~3,500-4,000 kcal</td><td>Extreme Cold Resistance</td></tr>
+                    <tr><td>Italy</td><td>3,000+ kcal</td><td>Alcohol "Cordiale" included</td></tr>
+                    <tr><td>U.S.A.</td><td>3,800 kcal</td><td>Flameless heating (FRH)</td></tr>
+                    <tr><td>Russia</td><td>3,500-4,000 kcal</td><td>High crackers & fat for cold</td></tr>
                 </tbody>
             </table>
-            
+
             <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
         </div>
     </div>
