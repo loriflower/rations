@@ -4,77 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivio Razioni Militari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --militare: #4b5320; /* Verde oliva */
-            --sabbia: #c2b280;
-            --scuro: #1b1e0f;
+            --verde-mimetico: #4b5320;
+            --verde-chiaro: #606c38;
+            --sabbia: #fefae0;
+            --terra: #dda15e;
+            --scuro: #283618;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: #f0f0e8; color: #333; }
-        header { background: var(--militare); color: white; padding: 2rem; text-align: center; border-bottom: 5px solid var(--scuro); }
-        nav { background: var(--scuro); padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        nav a { color: var(--sabbia); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
-        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border: 1px solid #ccc; box-shadow: 5px 5px 0px #aaa; }
-        h2 { color: var(--militare); border-left: 10px solid var(--militare); padding-left: 15px; text-transform: uppercase; }
-        section { margin-bottom: 40px; padding: 10px; }
-        .regolamenti { background: #e2e2d5; border: 2px dashed var(--militare); padding: 20px; border-radius: 5px; }
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
+
+        /* SFONDO MIMETICO CREATO CON CSS */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: var(--verde-mimetico);
+            /* Effetto mimetico generato */
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(96, 108, 56, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(40, 54, 24, 0.5) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(188, 108, 37, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(40, 54, 24, 0.4) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        header {
+            background: rgba(40, 54, 24, 0.9);
+            color: var(--sabbia);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--terra);
+        }
+
+        header h1 {
+            font-family: 'Black Ops One', cursive;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        /* SEZIONE INTRODUZIONE */
+        .intro-section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        /* GRIGLIA DI RIQUADRI (DASHBOARD) */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--scuro);
+            color: var(--sabbia);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--terra);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: var(--terra);
+            color: var(--scuro);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+        }
+
+        .card span {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        /* CONTENUTI DETTAGLIATI */
+        .content-section {
+            max-width: 900px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            display: none; /* Nasconde inizialmente le sezioni */
+        }
+
+        /* Questo serve per mostrare la sezione quando viene cliccata */
+        .content-section:target {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        h2 {
+            font-family: 'Black Ops One', cursive;
+            color: var(--scuro);
+            border-bottom: 2px solid var(--terra);
+            padding-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--verde-mimetico);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--sabbia);
+            background: rgba(0,0,0,0.5);
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>DATABASE RAZIONI MILITARI</h1>
-    <p>Documentazione tecnica e contenuti delle razioni K e MRE</p>
+    <h1>MRE DATABASE</h1>
+    <p>Razioni Militari • Specifiche Tecniche • Regolamenti</p>
 </header>
 
-<nav>
-    <a href="#italia">ITALIA</a>
-    <a href="#usa">USA</a>
-    <a href="#francia">FRANCIA</a>
-    <a href="#regole">REGOLAMENTI</a>
-</nav>
-
-<div class="container">
-    <section id="italia">
-        <h2>Italia - Razione Viveri Speciale da Combattimento</h2>
-        <p>La razione italiana è famosa per includere un piccolo contenitore di cordiale e un fornello a combustibile solido.</p>
-        <ul>
-            <li><strong>Colazione:</strong> Biscotti dolci, latte condensato, cioccolato.</li>
-            <li><strong>Pranzo:</strong> Tortellini al ragù, manzo in gelatina, frutta sciroppata.</li>
-            <li><strong>Cena:</strong> Minestrone di verdure, tonno e fagioli, gallette.</li>
-        </ul>
-    </section>
-
-    <section id="usa">
-        <h2>USA - MRE (Meal, Ready-to-Eat)</h2>
-        <p>Il sistema MRE è lo standard delle forze armate americane dal 1981.</p>
-        <ul>
-            <li><strong>Innovazione:</strong> Include il Flameless Ration Heater (FRH) per scaldare il cibo senz'acqua.</li>
-            <li><strong>Varietà:</strong> 24 menu diversi disponibili ogni anno.</li>
-        </ul>
-    </section>
-
-    <section id="francia">
-        <h2>Francia - RCIR (Ration de Combat Individuelle Rechauffable)</h2>
-        <p>Spesso considerata la migliore al mondo per qualità organolettica.</p>
-        <ul>
-            <li><strong>Contenuto:</strong> Spesso include piatti come Anatra all'arancia o Cervo.</li>
-            <li><strong>Extra:</strong> Include un kit di riscaldamento con compresse di combustibile.</li>
-        </ul>
-    </section>
-
-    <section id="regole" class="regolamenti">
-        <h2>📋 Regolamentazioni e Dati Tecnici</h2>
-        <p>Qui puoi inserire le tue note specifiche. Ad esempio:</p>
-        <blockquote>
-            "Le razioni devono garantire un apporto calorico medio di 3.600 kcal al giorno per un soldato in attività operativa intensa."
-        </blockquote>
-    </section>
+<div class="intro-section">
+    <h2>Che cos'è una Razione Militare?</h2>
+    <p id="intro-text">
+        In attesa delle tue informazioni... Una razione militare (o MRE - Meal, Ready-to-Eat) è un pasto preconfezionato, 
+        studiato per fornire ai soldati l'energia necessaria durante le operazioni sul campo, dove non è possibile 
+        cucinare pasti freschi. Devono essere leggere, resistenti e nutrienti.
+    </p>
 </div>
 
+<div class="dashboard">
+    <a href="#italia" class="card">
+        <i class="fas fa-flag"></i>
+        <span>Italia</span>
+    </a>
+    <a href="#usa" class="card">
+        <i class="fas fa-star"></i>
+        <span>USA</span>
+    </a>
+    <a href="#francia" class="card">
+        <i class="fas fa-tower-paris"></i>
+        <span>Francia</span>
+    </a>
+    <a href="#regolamenti" class="card">
+        <i class="fas fa-file-contract"></i>
+        <span>Regolamenti</span>
+    </a>
+</div>
+
+<section id="italia" class="content-section">
+    <h2>Razione Speciale Italia</h2>
+    <p>Qui inseriremo i dettagli della razione italiana.</p>
+    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
+</section>
+
+<section id="usa" class="content-section">
+    <h2>MRE United States</h2>
+    <p>Qui inseriremo i dettagli della razione americana.</p>
+    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
+</section>
+
+<section id="francia" class="content-section">
+    <h2>RCIR Francia</h2>
+    <p>Qui inseriremo i dettagli della razione francese.</p>
+    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
+</section>
+
+<section id="regolamenti" class="content-section">
+    <h2>Normative Tecniche</h2>
+    <p>Qui inseriremo le tue informazioni sui regolamenti.</p>
+    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
+</section>
+
 <footer>
-    Progetto Razioni Militari - Accesso Autorizzato
+    © 2024 Database Razioni Militari - Progetto Operativo
 </footer>
 
 </body>
