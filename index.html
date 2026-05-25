@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRE Database - Archivio Tattico</title>
+    <title>Military Rations in the World</title>
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -13,7 +13,6 @@
             --sabbia: #fefae0;
             --terra: #dda15e;
             --scuro: #1b1e0f;
-            --grigio-tech: #2b2d31;
             --transizione: 0.4s ease-out;
         }
 
@@ -54,10 +53,30 @@
         .container { max-width: 1000px; margin: 0 auto; }
 
         header { text-align: center; margin-bottom: 50px; }
-        header h1 { font-family: 'Black Ops One', cursive; font-size: 3.5rem; color: var(--sabbia); margin: 0; }
-        header p { letter-spacing: 2px; color: var(--terra); font-weight: bold; }
+        header h1 { 
+            font-family: 'Black Ops One', cursive; 
+            font-size: 3.5rem; 
+            color: var(--sabbia); 
+            margin: 0; 
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        header p { 
+            letter-spacing: 1px; 
+            color: var(--terra); 
+            font-weight: bold; 
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
 
-        /* DASHBOARD */
+        .content-box {
+            background: rgba(255,255,255,0.95);
+            color: #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
         .dashboard {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -79,213 +98,4 @@
         .card i { font-size: 3rem; margin-bottom: 15px; }
         .card span { font-family: 'Black Ops One', cursive; font-size: 1.4rem; display: block; }
 
-        /* CONTENUTI */
-        .content-box {
-            background: rgba(255,255,255,0.95);
-            color: #222;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-
-        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); font-size: 2rem; margin-top: 0; }
-        
-        .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
-        @media (max-width: 768px) { .grid-info { grid-template-columns: 1fr; } }
-
-        /* TABELLE */
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
-        table th { background: var(--verde-mimetico); color: white; padding: 12px; text-align: left; }
-        table td { border: 1px solid #ddd; padding: 10px; }
-        table tr:nth-child(even) { background: #f9f9f9; }
-
-        .highlight-box { background: #e9ecef; border-left: 5px solid var(--terra); padding: 15px; margin: 20px 0; }
-
-        .back-btn {
-            background: var(--scuro);
-            color: var(--sabbia);
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-            font-family: 'Black Ops One', cursive;
-        }
-
-        .status-badge { background: var(--verde-mimetico); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; }
-    </style>
-</head>
-<body>
-
-<div class="bg-camouflage"></div>
-
-<div id="home" class="page active">
-    <div class="container">
-        <header>
-            <h1>MRE DATABASE</h1>
-            <p>SISTEMA DI ARCHIVIAZIONE RAZIONI DA COMBATTIMENTO</p>
-        </header>
-
-        <div class="content-box" style="background: rgba(0,0,0,0.6); color: white; text-align: center; margin-bottom: 30px;">
-            <p>Benvenuto, operatore. Questo archivio contiene le specifiche tecniche, i valori nutrizionali e i regolamenti internazionali (STANAG/HACCP) delle razioni alimentari delle principali forze armate mondiali.</p>
-        </div>
-
-        <div class="dashboard">
-            <div class="card" onclick="showPage('italia')">
-                <i class="fas fa-flag"></i>
-                <span>ITALIA</span>
-            </div>
-            <div class="card" onclick="showPage('usa')">
-                <i class="fas fa-star"></i>
-                <span>U.S.A.</span>
-            </div>
-            <div class="card" onclick="showPage('russia')">
-                <i class="fas fa-star-and-crescent"></i>
-                <span>RUSSIA</span>
-            </div>
-            <div class="card" onclick="showPage('normative')">
-                <i class="fas fa-file-shield"></i>
-                <span>NORMATIVE</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="italia" class="page">
-    <div class="container">
-        <div class="content-box">
-            <h2>🇮🇹 RAZIONE MILITARE ITALIANA</h2>
-            <div class="grid-info">
-                <div>
-                    <p>Le razioni italiane sono suddivise in <strong>moduli classificati da A a G</strong>, identificati da colori diversi per evitare la monotonia alimentare durante le missioni a lungo termine.</p>
-                    <p>Ogni kit include un set completo per la sopravvivenza: un fornello da campo, posate e un kit per la disinfezione dell'acqua.</p>
-                </div>
-                <div class="highlight-box">
-                    <strong>Specifiche Tecniche:</strong><br>
-                    Apporto Calorico: ~3000 kcal<br>
-                    Struttura: 3 Pasti (Colazione, Pranzo, Cena)<br>
-                    Particolarità: Include cordiale (alcolico).
-                </div>
-            </div>
-            <a href="#" class="back-btn" onclick="showPage('home')">← RITORNA AL DATABASE</a>
-        </div>
-    </div>
-</div>
-
-<div id="usa" class="page">
-    <div class="container">
-        <div class="content-box">
-            <h2>🇺🇸 U.S. MILITARY RATION (MRE)</h2>
-            <p>Il <strong>Meal Ready-to-Eat (MRE)</strong> è lo standard statunitense. Progettato per durare a lungo (fino a 3 anni) in condizioni estreme.</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cibo</th>
-                        <th>Quantità</th>
-                        <th>Calorie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
-                    <tr><td>Chocolate Energy Drink</td><td>42g</td><td>180 kcal</td></tr>
-                    <tr><td>Oat Cookie</td><td>57g</td><td>250 kcal</td></tr>
-                    <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
-                    <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
-                    <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
-                </tbody>
-            </table>
-
-            <div class="highlight-box">
-                <strong>Vantaggi:</strong> Utilizzabile senza fuoco (FRH inclusi), psicologicamente eccellente per i soldati.<br>
-                <strong>Svantaggi:</strong> Alti livelli di sodio e grassi saturi.
-            </div>
-            <a href="#" class="back-btn" onclick="showPage('home')">← RITORNA AL DATABASE</a>
-        </div>
-    </div>
-</div>
-
-<div id="russia" class="page">
-    <div class="container">
-        <div class="content-box">
-            <h2>🇷🇺 RUSSIA'S MILITARY RATIONS</h2>
-            <p>Le razioni russe sono divise principalmente in 3 tipologie tattiche:</p>
-            <ul>
-                <li><strong>IRP:</strong> Razione giornaliera standard per soldati.</li>
-                <li><strong>MRGP:</strong> Progettata per climi rigidi (montagna e inverno).</li>
-                <li><strong>SHTURM:</strong> Razione per missioni rapide o emergenze.</li>
-            </ul>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cibo</th>
-                        <th>Quantità</th>
-                        <th>Calorie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Beef Stew</td><td>250g</td><td>550 kcal</td></tr>
-                    <tr><td>Meat Gulash with Veggies</td><td>100g</td><td>180 kcal</td></tr>
-                    <tr><td>Wheat Crackers</td><td>200g</td><td>720 kcal</td></tr>
-                    <tr><td>Spreading Cheese</td><td>80g</td><td>240 kcal</td></tr>
-                    <tr><td>Chocolate / Energy Bar</td><td>50g</td><td>250 kcal</td></tr>
-                    <tr><td>Concentrate Drink</td><td>1-2 bags</td><td>80-160 kcal</td></tr>
-                    <tr style="font-weight:bold; background:#eee;">
-                        <td>TOTALE</td><td>700g</td><td>2100 kcal</td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="#" class="back-btn" onclick="showPage('home')">← RITORNA AL DATABASE</a>
-        </div>
-    </div>
-</div>
-
-<div id="normative" class="page">
-    <div class="container">
-        <div class="content-box">
-            <h2>📋 ACCORDI E REGOLAMENTI</h2>
-            
-            <div class="grid-info">
-                <div>
-                    <h3>ACCORDI NATO (STANAG)</h3>
-                    <p>Nel 2001 la NATO ha definito lo <strong>STANAG</strong>, un regolamento che stabilisce i requisiti nutrizionali minimi per i paesi membri.</p>
-                    <p>Il range calorico deve variare tra <strong>3600 e 4900 calorie</strong> in base al tipo di attività svolta dall'operatore.</p>
-                </div>
-                <div>
-                    <h3>HACCP</h3>
-                    <p>Le razioni devono rispettare lo standard HACCP. Il cibo deve essere sterile, resistente a temperature da <strong>-30°C a +60°C</strong> e commestibile per 2-3 anni indipendentemente dal meteo.</p>
-                </div>
-            </div>
-
-            <h3>CONCLUSIONI FINALI</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nazione</th>
-                        <th>Apporto Calorico</th>
-                        <th>Caratteristica Principale</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Italia</td><td>3000 kcal</td><td>Varietà (Moduli A-G)</td></tr>
-                    <tr><td>USA</td><td>1400 kcal (singolo pasto)</td><td>Senza fuoco / Varietà 24 menu</td></tr>
-                    <tr><td>Russia</td><td>2100 kcal</td><td>Resistenza climi rigidi</td></tr>
-                </tbody>
-            </table>
-            <a href="#" class="back-btn" onclick="showPage('home')">← RITORNA AL DATABASE</a>
-        </div>
-    </div>
-</div>
-
-<script>
-    function showPage(pageId) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0,0);
-    }
-</script>
-
-</body>
-</html>
+        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10
