@@ -11,24 +11,16 @@
         :root {
             --mimetico-verde: #3b441b;
             --mimetico-marrone: #4b3621;
-            --mimetico-scuro: #1a1c0e;
             --sabbia: #fefae0;
             --terra: #dda15e;
             --scuro: #0d0e05;
             --transizione: 0.4s ease-out;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            background: var(--scuro);
-            color: white;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--scuro); color: white; overflow-x: hidden; }
 
         .bg-camouflage {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: #3b441b;
             background-image: 
                 radial-gradient(circle at 15% 15%, #2a3014 0%, #2a3014 25%, transparent 35%),
@@ -37,98 +29,40 @@
                 radial-gradient(circle at 25% 75%, #4b3621 0%, #4b3621 18%, transparent 28%),
                 radial-gradient(circle at 65% 85%, #2a3014 0%, #2a3014 25%, transparent 35%),
                 radial-gradient(circle at 90% 50%, #1a1c0e 0%, #1a1c0e 20%, transparent 30%);
-            background-size: 500px 500px;
-            z-index: -1;
+            background-size: 500px 500px; z-index: -1;
         }
 
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding: 40px 15px;
-            box-sizing: border-box;
-            animation: slideUp var(--transizione);
-        }
-
+        .page { display: none; min-height: 100vh; padding: 40px 15px; box-sizing: border-box; animation: slideUp var(--transizione); }
         .page.active { display: block; }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
         .container { max-width: 900px; margin: 0 auto; }
-
         header { text-align: center; margin-bottom: 40px; }
-        header h1 { 
-            font-family: 'Black Ops One', cursive; 
-            font-size: 3.2rem; 
-            color: var(--sabbia); 
-            margin: 0; 
-            text-transform: uppercase; 
-            text-shadow: 4px 4px 2px rgba(0,0,0,0.7);
-        }
+        header h1 { font-family: 'Black Ops One', cursive; font-size: 3rem; color: var(--sabbia); margin: 0; text-transform: uppercase; text-shadow: 4px 4px 2px rgba(0,0,0,0.7); }
         header p { color: var(--terra); font-weight: bold; font-size: 1.1rem; margin-top: 5px; }
 
-        .content-box {
-            background: rgba(255, 255, 255, 0.96);
-            color: #222;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            line-height: 1.6;
-        }
+        .content-box { background: rgba(255, 255, 255, 0.96); color: #222; padding: 35px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); line-height: 1.6; }
 
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .card {
-            background: rgba(0,0,0,0.85);
-            border: 2px solid var(--terra);
-            padding: 25px 15px;
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transizione);
-        }
-
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+        .card { background: rgba(0,0,0,0.85); border: 2px solid var(--terra); padding: 25px 15px; border-radius: 12px; text-align: center; cursor: pointer; transition: var(--transizione); }
         .card:hover { background: var(--terra); color: var(--scuro); transform: translateY(-5px); }
         .card .flag { font-size: 3.5rem; margin-bottom: 10px; display: block; }
-        .card span { font-family: 'Black Ops One', cursive; font-size: 1.2rem; display: block; }
+        .card span { font-family: 'Black Ops One', cursive; font-size: 1.1rem; display: block; }
 
-        .info-panel {
-            background: rgba(0,0,0,0.75);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--terra);
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        .info-panel { background: rgba(0,0,0,0.75); color: white; padding: 25px; border-radius: 12px; border: 1px solid var(--terra); margin-bottom: 20px; text-align: center; }
 
-        h2 { font-family: 'Black Ops One', cursive; color: var(--verde-mimetico); border-bottom: 3px solid var(--terra); padding-bottom: 10px; margin-top: 0; }
-        h3 { color: var(--verde-mimetico); border-left: 5px solid var(--terra); padding-left: 10px; margin-top: 25px; }
+        h2 { font-family: 'Black Ops One', cursive; color: var(--mimetico-verde); border-bottom: 3px solid var(--terra); padding-bottom: 10px; margin-top: 0; }
+        h3 { color: var(--mimetico-verde); border-left: 5px solid var(--terra); padding-left: 10px; margin-top: 25px; border-bottom: 1px solid #ddd; }
         
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
-        table th { background: #3b441b; color: white; padding: 12px; text-align: left; }
-        table td { border: 1px solid #ddd; padding: 10px; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; font-size: 0.9rem; }
+        table th { background: #3b441b; color: white; padding: 10px; text-align: left; }
+        table td { border: 1px solid #ddd; padding: 8px; color: #333; }
         
         .list-box { background: #e9ecef; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #ccc; color: #333; }
-
-        .back-btn {
-            background: var(--scuro);
-            color: var(--sabbia);
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-            font-family: 'Black Ops One', cursive;
-        }
+        .back-btn { background: var(--scuro); color: var(--sabbia); padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; font-family: 'Black Ops One', cursive; border:none; cursor:pointer;}
+        
+        strong { color: #3b441b; }
     </style>
 </head>
 <body>
@@ -139,11 +73,11 @@
     <div class="container">
         <header>
             <h1>Military Rations in the World</h1>
-            <p>A comprehensive look into military rations in the world</p>
+            <p>Scienze Project: Nutritional and Technical Analysis</p>
         </header>
 
         <div class="info-panel">
-            <p>Welcome to the Global MRE Archive. Explore the technical standards, nutritional components, and survival equipment used by armed forces worldwide.</p>
+            <p>Welcome to the Global MRE Archive. Explore technical standards (STANAG), nutritional components, and the science behind survival food.</p>
         </div>
 
         <div class="dashboard">
@@ -163,11 +97,10 @@
                 <span class="flag">🇷🇺</span>
                 <span>RUSSIA</span>
             </div>
-        </div>
-
-        <div class="info-panel">
-            <h3>Comparison Analysis</h3>
-            <p>Compare how different nations approach the challenge of feeding soldiers. While the <strong>U.S.</strong> focuses on flameless heating and variety, <strong>Italy</strong> prioritizes modular diversity and hygiene, and <strong>Russia</strong> emphasizes high-calorie fats for extreme climates.</p>
+            <div class="card" onclick="showPage('conclusions')">
+                <span class="flag">📊</span>
+                <span>CONCLUSIONS</span>
+            </div>
         </div>
     </div>
 </div>
@@ -175,28 +108,26 @@
 <div id="regulations" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>📋 AGREEMENTS & REGULATIONS</h2>
+            <h2>📋 ACCORDI CHE REGOLANO LE RAZIONI</h2>
             
-            <h3>STANAG 2937 (NATO)</h3>
-            <p>Adopted in 2001, the <strong>Standardization Agreement</strong> ensures that soldiers from different NATO countries receive adequate and safe nutrition during joint operations.</p>
+            <h3>NATO STANAG 2937</h3>
+            <p>Nel 2001 la NATO ha istituito lo <strong>STANAG</strong>, un regolamento che definisce i requisiti nutrizionali obbligatori per le forze armate dei paesi membri.</p>
             <ul>
-                <li><strong>Energy Intake:</strong> Rations must provide between 3,600 and 4,900 kcal per day (depending on activity).</li>
-                <li><strong>Fat Content:</strong> Fats must not exceed 30% of the total energy intake.</li>
-                <li><strong>Nutritional Balance:</strong> Menus must be varied to maintain physical and mental performance.</li>
+                <li><strong>Apporto Energetico:</strong> Deve variare tra le 3.600 e le 4.900 calorie al giorno, a seconda dell'attività svolta.</li>
             </ul>
 
-            <h3>HACCP & Technical Safety</h3>
-            <p>All military food must strictly follow the <strong>HACCP</strong> (Hazard Analysis and Critical Control Points) system to eliminate biological, chemical, or physical risks.</p>
+            <h3>HACCP & Sicurezza Alimentare</h3>
+            <p>Tutte le razioni devono rispettare gli standard <strong>HACCP</strong>, garantendo un contenuto sterile e sicuro.</p>
             
             <div class="list-box">
-                <strong>Technical Durability Requirements:</strong>
+                <strong>Specifiche Tecniche:</strong>
                 <ul>
-                    <li><strong>Temperature Resistance:</strong> Must remain stable and safe from -30°C to +60°C.</li>
-                    <li><strong>Shelf Life:</strong> Guaranteed for at least 2 to 3 years in any weather condition.</li>
-                    <li><strong>Sterilization:</strong> Advanced heat or pressure treatments ensure safety without refrigeration.</li>
+                    <li><strong>Resistenza Termica:</strong> Commestibile da -30°C a +60°C.</li>
+                    <li><strong>Durata:</strong> Conservazione garantita per 2-3 anni senza refrigerazione.</li>
+                    <li><strong>Adattabilità:</strong> Progettate per resistere a ogni condizione meteorologica.</li>
                 </ul>
             </div>
-            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+            <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
 </div>
@@ -204,25 +135,23 @@
 <div id="italia" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇮🇹 RAZIONE VIVERI SPECIALE DA COMBATTIMENTO</h2>
-            <p>The Italian ration is a complete 24-hour food supply designed for soldiers in operational environments.</p>
+            <h2>🇮🇹 RAZIONE MILITARE ITALIANA</h2>
+            <p>Conosciuta come <em>Razione Viveri Speciale da Combattimento</em>.</p>
             
-            <h3>Modular Structure</h3>
-            <p>It is divided into <strong>7 different modules</strong>, identified by specific colors (Module A to Module G). This variety is essential to prevent "dietary boredom" (monotonia alimentare) and ensure balanced nutrition over long periods.</p>
+            <h3>Moduli A-G</h3>
+            <p>Le razioni italiane sono divise in <strong>7 moduli (da A a G)</strong>, ognuno contraddistinto da un colore diverso. Questa varietà serve a prevenire la "noia alimentare" del soldato.</p>
             
-            <h3>Equipment and Hygiene</h3>
-            <p>Inside each package, the soldier finds survival and hygiene tools:</p>
-            <ul>
-                <li>Disposable folding stove and fuel tablets.</li>
-                <li>Water purification tablets to make water safe.</li>
-                <li>Hygiene kit: tissues, toothbrushes, and more.</li>
-                <li>A small dose of alcohol ("Cordiale").</li>
-            </ul>
-
             <div class="list-box">
-                <strong>Average Energy Intake:</strong> Approximately 3,000 kcal per day, optimized for high physical exertion.
+                <strong>Contenuto del Kit:</strong>
+                <ul>
+                    <li>Fornello da campo pieghevole e combustibile solido.</li>
+                    <li>Posate e kit di potabilizzazione dell'acqua.</li>
+                    <li>Kit per l'igiene orale (spazzolini e pasta).</li>
+                    <li><strong>Cordiale:</strong> Una piccola dose di alcol (3cl) inclusa per scopi ricreativi/energetici.</li>
+                </ul>
             </div>
-            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+            <p>L'apporto calorico medio è di circa <strong>3.000 kcal</strong> totali per le 24 ore.</p>
+            <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
 </div>
@@ -230,14 +159,16 @@
 <div id="usa" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇺🇸 MEAL, READY-TO-EAT (MRE)</h2>
-            <p>The MRE is the primary individual combat ration of the U.S. Armed Forces, designed for consumption in the field.</p>
+            <h2>🇺🇸 US MILITARY RATION (MRE)</h2>
+            <p>La <strong>MRE (Meal, Ready to Eat)</strong> è la razione individuale degli Stati Uniti.</p>
             
-            <h3>Nutritional Facts (Example Menu)</h3>
+            <h3>Il Flameless Ration Heater (FRH)</h3>
+            <p>Una delle caratteristiche principali è il riscaldatore chimico. Funziona tramite una reazione tra <strong>magnesio, ferro e sale</strong> che genera calore a contatto con l'acqua. 
+            È fondamentale perché permette di mangiare cibo caldo senza accendere fuochi, evitando di rivelare la posizione ai nemici.</p>
+
+            <h3>Nutritional Table (Example MRE 23)</h3>
             <table>
-                <thead>
-                    <tr><th>Component</th><th>Weight</th><th>Calories</th></tr>
-                </thead>
+                <thead><tr><th>CIBO</th><th>QUANTITÀ</th><th>APPORTO CALORICO</th></tr></thead>
                 <tbody>
                     <tr><td>Blueberry Pie</td><td>65g</td><td>230 kcal</td></tr>
                     <tr><td>Chocolate Energy Drink</td><td>42g</td><td>180 kcal</td></tr>
@@ -245,25 +176,11 @@
                     <tr><td>Pepperoni Pizza</td><td>88g</td><td>280 kcal</td></tr>
                     <tr><td>Vegetarian Cracker</td><td>87g</td><td>360 kcal</td></tr>
                     <tr><td>Spreading Cheese</td><td>28g</td><td>100 kcal</td></tr>
+                    <tr style="background:#eee;"><td><strong>TOTALE SINGOLO PASTO</strong></td><td>-</td><td><strong>~1.400 kcal</strong></td></tr>
                 </tbody>
             </table>
-
-            <h3>Operational Analysis</h3>
-            <div class="list-box">
-                <strong>Pros:</strong>
-                <ul>
-                    <li>Highly portable and durable.</li>
-                    <li>Great variety (24 different menus).</li>
-                    <li>Includes the "Flameless Ration Heater" (FRH) for hot meals without fire.</li>
-                    <li>Provides a psychological boost through familiar snacks.</li>
-                </ul>
-                <strong>Cons:</strong>
-                <ul>
-                    <li>Very high sodium (salt) levels.</li>
-                    <li>High levels of saturated fats and preservatives.</li>
-                </ul>
-            </div>
-            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+            <p>Esistono 24 varianti di menu. Una singola razione fornisce circa 1.300-1.400 calorie (3 pasti al giorno = ~4.000 kcal).</p>
+            <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
 </div>
@@ -271,35 +188,62 @@
 <div id="russia" class="page">
     <div class="container">
         <div class="content-box">
-            <h2>🇷🇺 RUSSIAN MILITARY RATIONS</h2>
-            <p>Rations tailored to specific mission profiles and harsh environments.</p>
-            
-            <h3>Main Classifications</h3>
+            <h2>🇷🇺 RUSSIA'S MILITARY RATIONS</h2>
+            <p>Le razioni russe sono progettate per climi estremi e divise in 3 tipologie principali:</p>
             <ul>
-                <li><strong>IRP:</strong> The standard daily ration for personnel.</li>
-                <li><strong>MRGP:</strong> Specialized for mountain combat and cold climates.</li>
-                <li><strong>SHTURM:</strong> Compact and light for assault or emergency operations.</li>
+                <li><strong>IRP:</strong> Razionamento quotidiano standard.</li>
+                <li><strong>MRGP:</strong> Per climi rigidi, invernali e zone montuose.</li>
+                <li><strong>SHTURM:</strong> Per missioni rapide o situazioni di emergenza.</li>
             </ul>
 
-            <h3>Contents and Caloric Table</h3>
+            <h3>Tabella Nutrizionale IRP</h3>
             <table>
-                <thead>
-                    <tr><th>Component</th><th>Quantity</th><th>Calories</th></tr>
-                </thead>
+                <thead><tr><th>FOOD</th><th>QUANTITY</th><th>CALORIE INTAKE</th></tr></thead>
                 <tbody>
                     <tr><td>Beef Stew</td><td>250g</td><td>550 kcal</td></tr>
-                    <tr><td>Meat Goulash with Veggies</td><td>100g</td><td>180 kcal</td></tr>
-                    <tr><td>Wheat Crackers</td><td>200g (4 packs)</td><td>720 kcal</td></tr>
+                    <tr><td>Meat Goulash</td><td>100g</td><td>180 kcal</td></tr>
+                    <tr><td>Wheat Crackers</td><td>200g</td><td>720 kcal</td></tr>
                     <tr><td>Spreading Cheese</td><td>80g</td><td>240 kcal</td></tr>
                     <tr><td>Chocolate / Energy Bar</td><td>50g</td><td>250 kcal</td></tr>
-                    <tr><td>Drink Concentrate</td><td>2 bags</td><td>160 kcal</td></tr>
-                    <tr style="font-weight:bold; background:#ddd;">
-                        <td>TOTAL (Main Items)</td><td>700g</td><td>~2,100 kcal</td>
+                    <tr><td>Concentrate for Drink</td><td>1-2 bags</td><td>80-160 kcal</td></tr>
+                    <tr style="background:#eee;"><td><strong>TOTAL</strong></td><td><strong>700g</strong></td><td><strong>2.100 kcal</strong></td></tr>
+                </tbody>
+            </table>
+            <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
+        </div>
+    </div>
+</div>
+
+<div id="conclusions" class="page">
+    <div class="container">
+        <div class="content-box">
+            <h2>📊 FINAL CONCLUSION & COMPARISON</h2>
+            <table>
+                <thead><tr><th>NAME</th><th>CALORIE INTAKE</th><th>PROS</th><th>CONS</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Italy</strong></td>
+                        <td>3000 Kcal</td>
+                        <td>High variety, Hygiene kit included</td>
+                        <td>Heavy cans</td>
+                    </tr>
+                    <tr>
+                        <td><strong>USA</strong></td>
+                        <td>1300 Kcal per meal</td>
+                        <td>Flameless heating, Psychologically excellent</td>
+                        <td>High Sodium & Saturated fats</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Russia</strong></td>
+                        <td>2100 Kcal (Main)</td>
+                        <td>Waterproof, High energy density</td>
+                        <td>Heavy (1.7-2kg), High fat content</td>
                     </tr>
                 </tbody>
             </table>
-            <p><em>Note: A complete IRP package typically provides a total daily intake between 3,500 and 4,000 kcal.</em></p>
-            <a href="#" class="back-btn" onclick="showPage('home')">← BACK TO HOME</a>
+            <h3>Scientific Summary</h3>
+            <p>Mentre la razione <strong>USA</strong> punta sull'innovazione chimica (FRH) e sul morale del soldato (cibo simile a quello civile), quella <strong>Russa</strong> è focalizzata sulla sopravvivenza in condizioni di freddo estremo con un alto contenuto di grassi. L'<strong>Italia</strong> si distingue per l'attenzione all'igiene e alla modularità della dieta.</p>
+            <button class="back-btn" onclick="showPage('home')">← BACK TO HOME</button>
         </div>
     </div>
 </div>
