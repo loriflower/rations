@@ -10,204 +10,221 @@
     <style>
         :root {
             --verde-mimetico: #4b5320;
-            --verde-chiaro: #606c38;
             --sabbia: #fefae0;
             --terra: #dda15e;
-            --scuro: #283618;
+            --scuro: #1b1e0f;
+            --transizione: 0.5s ease-in-out;
         }
 
-        /* SFONDO MIMETICO CREATO CON CSS */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-            color: #333;
+            overflow-x: hidden;
+            background: var(--scuro);
+            color: white;
+        }
+
+        /* SFONDO MIMETICO FISSO */
+        .bg-camouflage {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: var(--verde-mimetico);
-            /* Effetto mimetico generato */
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(96, 108, 56, 0.4) 0%, transparent 40%),
                 radial-gradient(circle at 80% 10%, rgba(40, 54, 24, 0.5) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(188, 108, 37, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(40, 54, 24, 0.4) 0%, transparent 40%);
-            background-attachment: fixed;
+                radial-gradient(circle at 50% 50%, rgba(188, 108, 37, 0.2) 0%, transparent 50%);
+            z-index: -1;
         }
 
-        header {
-            background: rgba(40, 54, 24, 0.9);
-            color: var(--sabbia);
+        /* CONTENITORE DELLE PAGINE */
+        .page {
+            display: none; /* Nasconde tutte le pagine di default */
+            min-height: 100vh;
             padding: 40px 20px;
+            box-sizing: border-box;
+            animation: fadeIn var(--transizione);
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HEADER */
+        header {
             text-align: center;
-            border-bottom: 4px solid var(--terra);
+            margin-bottom: 40px;
         }
 
         header h1 {
             font-family: 'Black Ops One', cursive;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            color: var(--sabbia);
+            text-shadow: 3px 3px 0px var(--scuro);
             margin: 0;
-            letter-spacing: 3px;
         }
 
-        /* SEZIONE INTRODUZIONE */
-        .intro-section {
-            max-width: 900px;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
+        /* DASHBOARD HOME */
+        .intro-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 700px;
             text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
         }
 
-        /* GRIGLIA DI RIQUADRI (DASHBOARD) */
         .dashboard {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 900px;
         }
 
         .card {
-            background: var(--scuro);
-            color: var(--sabbia);
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.6);
             border: 2px solid var(--terra);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            padding: 40px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-10px);
             background: var(--terra);
             color: var(--scuro);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+            transform: scale(1.05);
         }
 
-        .card span {
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-        }
+        .card i { font-size: 3rem; margin-bottom: 15px; }
+        .card span { font-family: 'Black Ops One', cursive; font-size: 1.2rem; display: block; }
 
-        /* CONTENUTI DETTAGLIATI */
-        .content-section {
-            max-width: 900px;
-            margin: 60px auto;
-            background: white;
+        /* PAGINE DI DETTAGLIO */
+        .content-container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
             padding: 40px;
-            border-radius: 15px;
-            display: none; /* Nasconde inizialmente le sezioni */
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        /* Questo serve per mostrare la sezione quando viene cliccata */
-        .content-section:target {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        h2 {
+        .content-container h2 {
             font-family: 'Black Ops One', cursive;
-            color: var(--scuro);
-            border-bottom: 2px solid var(--terra);
-            padding-bottom: 10px;
+            color: var(--verde-mimetico);
+            border-bottom: 3px solid var(--terra);
+            font-size: 2.5rem;
         }
 
         .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--verde-mimetico);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
+            background: var(--scuro);
             color: var(--sabbia);
-            background: rgba(0,0,0,0.5);
-            margin-top: 50px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: 0.3s;
         }
+
+        .back-btn:hover { background: var(--verde-mimetico); }
+
     </style>
 </head>
 <body>
 
-<header>
-    <h1>MRE DATABASE</h1>
-    <p>Razioni Militari • Specifiche Tecniche • Regolamenti</p>
-</header>
+<div class="bg-camouflage"></div>
 
-<div class="intro-section">
-    <h2>Che cos'è una Razione Militare?</h2>
-    <p id="intro-text">
-        In attesa delle tue informazioni... Una razione militare (o MRE - Meal, Ready-to-Eat) è un pasto preconfezionato, 
-        studiato per fornire ai soldati l'energia necessaria durante le operazioni sul campo, dove non è possibile 
-        cucinare pasti freschi. Devono essere leggere, resistenti e nutrienti.
-    </p>
+<div id="home" class="page active">
+    <header>
+        <h1>MRE DATABASE</h1>
+        <p>UNITÀ DI ARCHIVIAZIONE DATI TATTICI</p>
+    </header>
+
+    <div class="intro-box">
+        <p>Benvenuto nell'archivio digitale delle razioni. Seleziona uno stato per visualizzare le specifiche tecniche e i contenuti delle razioni da combattimento.</p>
+    </div>
+
+    <div class="dashboard">
+        <div class="card" onclick="showPage('italia')">
+            <i class="fas fa-flag"></i>
+            <span>ITALIA</span>
+        </div>
+        <div class="card" onclick="showPage('usa')">
+            <i class="fas fa-star"></i>
+            <span>USA</span>
+        </div>
+        <div class="card" onclick="showPage('francia')">
+            <i class="fas fa-utensils"></i>
+            <span>FRANCIA</span>
+        </div>
+        <div class="card" onclick="showPage('regolamenti')">
+            <i class="fas fa-file-contract"></i>
+            <span>NORMATIVE</span>
+        </div>
+    </div>
 </div>
 
-<div class="dashboard">
-    <a href="#italia" class="card">
-        <i class="fas fa-flag"></i>
-        <span>Italia</span>
-    </a>
-    <a href="#usa" class="card">
-        <i class="fas fa-star"></i>
-        <span>USA</span>
-    </a>
-    <a href="#francia" class="card">
-        <i class="fas fa-tower-paris"></i>
-        <span>Francia</span>
-    </a>
-    <a href="#regolamenti" class="card">
-        <i class="fas fa-file-contract"></i>
-        <span>Regolamenti</span>
-    </a>
+<div id="italia" class="page">
+    <div class="content-container">
+        <h2>🇮🇹 ITALIA</h2>
+        <p>Qui caricheremo le informazioni della tua presentazione su Italia.</p>
+        <a href="#" class="back-btn" onclick="showPage('home')">← TORNA ALLA HOME</a>
+    </div>
 </div>
 
-<section id="italia" class="content-section">
-    <h2>Razione Speciale Italia</h2>
-    <p>Qui inseriremo i dettagli della razione italiana.</p>
-    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
-</section>
+<div id="usa" class="page">
+    <div class="content-container">
+        <h2>🇺🇸 USA</h2>
+        <p>Qui caricheremo le informazioni della tua presentazione su USA.</p>
+        <a href="#" class="back-btn" onclick="showPage('home')">← TORNA ALLA HOME</a>
+    </div>
+</div>
 
-<section id="usa" class="content-section">
-    <h2>MRE United States</h2>
-    <p>Qui inseriremo i dettagli della razione americana.</p>
-    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
-</section>
+<div id="francia" class="page">
+    <div class="content-container">
+        <h2>🇫🇷 FRANCIA</h2>
+        <p>Qui caricheremo le informazioni della tua presentazione su Francia.</p>
+        <a href="#" class="back-btn" onclick="showPage('home')">← TORNA ALLA HOME</a>
+    </div>
+</div>
 
-<section id="francia" class="content-section">
-    <h2>RCIR Francia</h2>
-    <p>Qui inseriremo i dettagli della razione francese.</p>
-    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
-</section>
+<div id="regolamenti" class="page">
+    <div class="content-container">
+        <h2>📋 NORMATIVE</h2>
+        <p>Qui caricheremo le tabelle e i regolamenti che hai.</p>
+        <a href="#" class="back-btn" onclick="showPage('home')">← TORNA ALLA HOME</a>
+    </div>
+</div>
 
-<section id="regolamenti" class="content-section">
-    <h2>Normative Tecniche</h2>
-    <p>Qui inseriremo le tue informazioni sui regolamenti.</p>
-    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Torna al menu</a>
-</section>
+<script>
+    function showPage(pageId) {
+        // Nasconde tutte le pagine
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
 
-<footer>
-    © 2024 Database Razioni Militari - Progetto Operativo
-</footer>
+        // Mostra solo la pagina selezionata
+        const activePage = document.getElementById(pageId);
+        activePage.classList.add('active');
+
+        // Torna in cima alla pagina
+        window.scrollTo(0, 0);
+    }
+</script>
 
 </body>
 </html>
